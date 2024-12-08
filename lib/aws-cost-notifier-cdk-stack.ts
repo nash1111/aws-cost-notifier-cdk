@@ -11,7 +11,7 @@ export class AwsCostNotifierCdkStack extends cdk.Stack {
     const fn = new lambda.Function(this, 'CostNotifierFunction', {
       runtime: lambda.Runtime.NODEJS_18_X,
       code: lambda.Code.fromAsset('lib/lambda-handler'),
-      handler: 'index.handler',
+      handler: 'lambda-handler/index.handler',
       environment: {
         SLACK_WEBHOOK_URL: process.env.SLACK_WEBHOOK_URL || ''
       }
